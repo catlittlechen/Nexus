@@ -6,7 +6,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/catlittlechen/Nexus"
+	"github.com/catlittlechen/nexus"
 	"github.com/garyburd/redigo/redis"
 	"time"
 )

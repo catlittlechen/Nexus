@@ -5,7 +5,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/catlittlechen/Nexus"
+	"github.com/catlittlechen/nexus"
 	"strconv"
 )
 
