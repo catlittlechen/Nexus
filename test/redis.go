@@ -18,11 +18,13 @@ type config struct {
 	Idle     int    `json:"idle"`
 }
 
+// Redis the implement of nexus.DB
 type Redis struct {
 	cfg  string
 	pool *redis.Pool
 }
 
+// NewRedis .
 func NewRedis(cfg string) (nexus.DB, error) {
 	var obj config
 	fmt.Println(cfg)
@@ -37,6 +39,7 @@ func NewRedis(cfg string) (nexus.DB, error) {
 	}, nil
 }
 
+// Set .
 func (r *Redis) Set(key string, value string) error {
 	conn := r.pool.Get()
 	defer conn.Close()
@@ -45,6 +48,7 @@ func (r *Redis) Set(key string, value string) error {
 	return err
 }
 
+// Get .
 func (r *Redis) Get(key string) (string, error) {
 	conn := r.pool.Get()
 	defer conn.Close()
@@ -56,6 +60,7 @@ func (r *Redis) Get(key string) (string, error) {
 	return value, err
 }
 
+// Del .
 func (r *Redis) Del(key string) error {
 	conn := r.pool.Get()
 	defer conn.Close()
@@ -64,16 +69,18 @@ func (r *Redis) Del(key string) error {
 	return err
 }
 
+// Close .
 func (r *Redis) Close() error {
 	err := r.pool.Close()
 	return err
 }
 
+// String .
 func (r *Redis) String() string {
 	return r.cfg
 }
 
-// NewRedisPool 初始化Redis链接池
+// NewRedisPool init Redis pool
 func NewRedisPool(addr string, db, poolsize, idle int) *redis.Pool {
 	return &redis.Pool{
 		MaxIdle:     poolsize,

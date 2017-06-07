@@ -33,7 +33,7 @@ func main() {
 		return
 	}
 
-	for i := 0; i <= 1024; i += 1 {
+	for i := 0; i <= 1024; i++ {
 		if err = root.Set("hello"+strconv.Itoa(i), "world"); nil != err {
 			fmt.Println(err)
 			return
@@ -51,7 +51,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	for i := 0; i <= 1024; i += 1 {
+	for i := 0; i <= 1024; i++ {
 		if err = root.Set("hello"+strconv.Itoa(i), "world"); nil != err {
 			fmt.Println(err)
 			return
@@ -74,19 +74,19 @@ func main() {
 	}
 	fmt.Printf("root: %+v\n", root2)
 
-	for i := 0; i <= 10; i += 1 {
+	for i := 0; i <= 10; i++ {
 		value, err := root2.Get("hello" + strconv.Itoa(i))
 		fmt.Printf("key: hello%s value:%s err: %s\n", strconv.Itoa(i), value, err)
 	}
 
-	for i := 0; i <= 10; i += 1 {
+	for i := 0; i <= 10; i++ {
 		if err := root2.Del("hello" + strconv.Itoa(i)); nil != err {
 			fmt.Println(err)
 			return
 		}
 	}
 
-	for i := 0; i <= 10; i += 1 {
+	for i := 0; i <= 10; i++ {
 		value, err := root2.Get("hello" + strconv.Itoa(i))
 		fmt.Printf("key: hello%s value:%s err: %s\n", strconv.Itoa(i), value, err)
 	}
