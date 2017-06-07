@@ -8,6 +8,7 @@ import (
 	"encoding/binary"
 )
 
+// MD5 .
 func MD5(key string) [16]byte {
 	return md5.Sum([]byte(key))
 }

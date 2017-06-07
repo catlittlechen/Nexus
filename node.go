@@ -9,8 +9,7 @@ import (
 	"strings"
 )
 
-// Node
-// root's parent is itself
+// Node root's parent is itself
 type Node struct {
 	Index    int
 	Parent   *Node
@@ -64,7 +63,7 @@ func (node *Node) getNode(key string, hashKey [16]byte, height int, clean bool) 
 	return
 }
 
-// Set
+// Set .
 func (node *Node) Set(key string, value string) error {
 	if node == nil {
 		return ErrNodeNotFound
@@ -80,7 +79,7 @@ func (node *Node) Get(key string) (string, error) {
 	return node.DB.Get(key)
 }
 
-// Del
+// Del .
 func (node *Node) Del(key string) error {
 	if node == nil {
 		return nil

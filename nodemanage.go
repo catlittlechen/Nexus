@@ -50,7 +50,7 @@ func (nm *NodeManager) delNode(index int) (err error) {
 // getIndex  get the max index
 func (nm *NodeManager) getIndex() (index int) {
 	index = nm.globalIndex
-	nm.globalIndex += 1
+	nm.globalIndex++
 	return
 }
 
@@ -207,7 +207,7 @@ func (nm *NodeManager) Get(key string) (string, error) {
 	return node.Get(key)
 }
 
-// Del. find and delete
+// Del find and delete
 func (nm *NodeManager) Del(key string) error {
 	nm.lock.RLock()
 	defer nm.lock.RUnlock()

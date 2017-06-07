@@ -8,16 +8,23 @@ import (
 )
 
 var (
+	// RootIndex the index of root
 	RootIndex = 0
 )
 
 var (
+	// ErrConfFormat the format of configuration is wrong
 	ErrConfFormat = errors.New("wrong conf format")
-	ErrConf       = errors.New("wrong conf")
+	// ErrConf bad configuration
+	ErrConf = errors.New("wrong conf")
 
-	ErrNodeNotFound    = errors.New("node not found")
-	ErrNodeReplicate   = errors.New("node replicate")
+	// ErrNodeNotFound node not found
+	ErrNodeNotFound = errors.New("node not found")
+	// ErrNodeReplicate node replicate
+	ErrNodeReplicate = errors.New("node replicate")
+	// ErrNodeHasChildren node has children
 	ErrNodeHasChildren = errors.New("node has children")
 
+	// ErrKeyNotFound key not found
 	ErrKeyNotFound = errors.New("key not found")
 )
